@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> New York Health Insurance Plan Premium Overview</title>
+    <!-- Include Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <header class="bg-pink-300 text-white p-4">
+    <h1 class="text-2xl font-bold mb-4 text-center">New York Health Insurance Premium Comparision App</h1>
+    </header>
+</head>
+
+<body class="bg-sand-200 p-4">
+
+        {% block content %}
+        <header class="bg-indigo-300 text-white p-4">
+        <h1 class="text-2xl font-bold mb-4 text-center">Insurance Plan Preview</h1>
+        </header>
+
+
+        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+            <table class="table-auto w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+                  Health Insurance Plans
+                  <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">Browse the list below to review the premium costs of health insurance plans available for purchase in New York State.</p>
+                 </caption>
+                      
+                      <thead class="text-xs text-gray-700 uppercase bg-purple-50 dark:bg-gray-700 dark:text-gray-400">
+                    <tr>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Year</th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">State</th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Carrier</th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Plan Name</th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Premium for 27 Year Old ($)</th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Premium for 50 Year Old ($)</th>
+                        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Premium for 4 Membered Family ($)</th>
+                    </tr>
+                </thead>
+
+                {% for data in data.values %}
+                    <tr>
+                        <td class="border px-4 py-2">{{ data[1] }}</td>
+                        <td class="border px-4 py-2">{{ data[4] }}</td>
+                        <td class="border px-4 py-2">{{ data[6] }}</td>
+                        <td class="border px-4 py-2">{{ data[7] }}</td>
+                        <td class="border px-4 py-2">{{ data[11] }}</td>
+                        <td class="border px-4 py-2">{{ data[12] }}</td>
+                        <td class="border px-4 py-2">{{ data[14] }}</td>
+                    </tr>
+                {% endfor %}
+        </table>
+        {% endblock %}
+    
+    <footer class="bg-pink-300 text-white p-4 m-6">
+        <p>© 2023 New York Health Insurance Premium Comparision Application. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
