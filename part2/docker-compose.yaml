@@ -1,15 +1,15 @@
 version: '3'
-services:
-  flask_app_1:
-    build: ./flask1
-    ports:
+services: #services are the containers
+  flask_app_1: #name of the container
+    build: ./flask1 #image being built
+    ports: #7001 is the port of the host machine and #5002 is the port of the container
       - "7001:5002"
-    volumes:
+    volumes: #directory of the file
       - ./flask1:/app
-  flask_app_2:
-    build: ./flask2
-    ports:
+  flask_app_2: #name of the container
+    build: ./flask2 #image being built
+    ports: #7002 is the port of the host machine and #5001 is the port of the container
       - "7002:5001"
-    volumes:
+    volumes: #directory of the file
       - ./flask2:/app
 
